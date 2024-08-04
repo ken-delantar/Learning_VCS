@@ -5,5 +5,4 @@ $response = array(
     "message" => "Hello from the back-end!"
 );
 
-echo json_encode($response); // Convert array to JSON and output it
-?>
+echo json_encode($response);

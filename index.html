@@ -20,7 +20,7 @@
 
     <script>
         document.getElementById('fetchData').addEventListener('click', function() {
-            fetch('https://your-backend-url.com/api.php') // Replace with your back-end URL
+            fetch('http://login-register.hstn.me/index.php') // Replace with your back-end URL
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('data').innerHTML = `<p>${data.message}</p>`;
