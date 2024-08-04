@@ -1,8 +1,7 @@
 <?php
-header('Content-Type: application/json'); // Set content type to JSON
-
-$response = array(
-    "message" => "Hello from the back-end!"
-);
-
-echo json_encode($response);
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $username = $_POST['user'] ?? '';
+    echo 'Hello ' . $username;
+}else{
+    echo 'Invalid Request';
+}

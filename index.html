@@ -1,35 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Front-End and Back-End Example</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #data {
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Front-End and Back-End Example</h1>
-    <button id="fetchData">Fetch Data</button>
-    <div id="data"></div>
-
-    <script>
-        document.getElementById('fetchData').addEventListener('click', function() {
-            fetch('https://login-register.hstn.me/index.php') // Replace with your back-end URL
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('data').innerHTML = `<p>${data.message}</p>`;
-                })
-                .catch(error => {
-                    console.error('Error fetching data:', error);
-                    document.getElementById('data').innerHTML = `<p>Error fetching data.</p>`;
-                });
-        });
-    </script>
-</body>
+<html>
+    <head>
+        <title>Send Request</title>
+    </head>
+    <body>
+        <form action="./index.php" method="post">
+            <input type="text" name="user" placeholder="Username">
+            <button type="submit">Submit</button>
+        </form>
+    </body>
 </html>
