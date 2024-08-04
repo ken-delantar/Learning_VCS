@@ -1,4 +1,13 @@
 <?php
+// Handle OPTIONS request (preflight request)
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    header('Access-Control-Allow-Origin: *'); // Allow all origins for testing
+    header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type');
+    exit(); // Exit early for OPTIONS requests
+}
+
+// Handle actual request (e.g., POST request)
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *'); // Allow all origins for testing
 
