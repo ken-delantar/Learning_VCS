@@ -25,7 +25,7 @@
             const formData = new FormData(this);
 
             fetch('https://login-register.hstn.me/index.php', {
-                method: 'GET',
+                method: 'POST',
                 body: formData
             })
             .then(response => response.json())
