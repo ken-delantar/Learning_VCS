@@ -13,9 +13,9 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     };
 
     fetch('https://login-register.hstn.me/index.php', {
-        method: 'POST', // Use POST method for form submission
+        method: 'POST', // Ensure the method is POST
         headers: {
-            'Content-Type': 'application/json' // Indicate the content type is JSON
+            'Content-Type': 'application/json' // Specify the content type
         },
         body: JSON.stringify(data) // Convert data to JSON
     })
