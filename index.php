@@ -1,26 +1,19 @@
 <?php
-// Allow requests from the specific origin
-header('Access-Control-Allow-Origin: https://ken-delantar.github.io'); 
-// Allow all origins (for testing purposes)
-header('Access-Control-Allow-Origin: *');
-
-// Allow specific HTTP methods
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
-
-// Allow specific headers
-header('Access-Control-Allow-Headers: Content-Type');
-
-// Content-Type header
 header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *'); // Allow all origins for testing
 
-// Sample user data
-$user = array(
-    "id" => 123,
-    "name" => "Alice",
-    "email" => "alice@example.com",
-    "age" => 30
+// Get the raw POST data
+$postData = file_get_contents('php://input');
+$data = json_decode($postData, true); // Decode the JSON data
+
+// Process the received data (for demonstration purposes)
+$response = array(
+    "id" => rand(1, 1000), // Generate a random ID for demonstration
+    "name" => $data['name'],
+    "email" => $data['email'],
+    "age" => $data['age']
 );
 
-// Output JSON
-echo json_encode($user);
+// Output JSON response
+echo json_encode($response);
 ?>
